@@ -24,9 +24,9 @@
   },
   "contributors": [],
   "scripts": {
-    "start": "node src/server/server.js",
-    "build": "cd src/client && npm install && npm run build",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && webpack --config webpack.config.js",
+    "start": "npm run build && node ./dist/server.cjs"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.3",
